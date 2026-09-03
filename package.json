@@ -1,0 +1,16 @@
+{
+  "name": "wa-bot-web-scanner",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot Web Scanner using Baileys and Socket.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.5",
+    "express": "^4.19.2",
+    "qrcode": "^1.5.3",
+    "socket.io": "^4.7.5"
+  }
+}
