@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Akun</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Rubik',sans-serif; }
+  body { min-height:100vh; background: linear-gradient(135deg, #42A5F5, #1E88E5); display:flex; align-items:center; justify-content:center; padding:20px; }
+  .card { background:#fff; border-radius:20px; padding:32px 26px; width:100%; max-width:400px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+  .logo { width:70px; height:70px; border-radius:18px; background: linear-gradient(135deg, #42A5F5, #1E88E5); display:flex; align-items:center; justify-content:center; color:#fff; font-size:28px; margin:0 auto 16px; }
+  h1 { font-size:22px; font-weight:700; color:#1f2933; text-align:center; }
+  .subtitle { text-align:center; color:#6b7280; font-size:13px; margin-top:6px; margin-bottom:24px; }
+  .field { margin-bottom:12px; }
+  .field label { display:block; font-size:12px; font-weight:600; color:#374151; margin-bottom:6px; }
+  .iw { position:relative; }
+  .iw i.l { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:#9ca3af; font-size:14px; }
+  .iw input { width:100%; padding:12px 40px 12px 40px; border:1.5px solid #e5e7eb; border-radius:10px; font-size:14px; outline:none; background:#f9fafb; }
+  .iw input:focus { border-color:#42A5F5; background:#fff; box-shadow: 0 0 0 3px rgba(66,165,245,.15); }
+  .toggle-pass { position:absolute; right:14px; top:50%; transform:translateY(-50%); color:#9ca3af; cursor:pointer; font-size:14px; }
+  .btn { width:100%; padding:13px; border:none; border-radius:10px; background: linear-gradient(135deg, #42A5F5, #1E88E5); color:#fff; font-weight:700; font-size:14px; cursor:pointer; margin-top:8px; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .btn:disabled { opacity:.6; cursor:not-allowed; }
+  .msg { min-height:20px; font-size:12.5px; text-align:center; margin-top:12px; font-weight:500; color:#dc2626; }
+  .msg.ok { color:#16a34a; } .msg.info { color:#6b7280; }
+  .note { font-size:11px; color:#9ca3af; margin-top:4px; }
+  .bottom { text-align:center; font-size:13px; color:#6b7280; margin-top:18px; padding-top:16px; border-top:1px solid #f3f4f6; }
+  .bottom a { color:#1E88E5; font-weight:600; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo"><i class="fa-solid fa-user-plus"></i></div>
+  <h1>Daftar Akun</h1>
+  <p class="subtitle">Buat akun untuk upload APK</p>
+
+  <form id="f">
+    <div class="field">
+      <label>Username</label>
+      <div class="iw"><i class="fa-solid fa-user l"></i>
+        <input id="username" required autocapitalize="none" placeholder="contoh: budi">
+      </div>
+      <div class="note">Huruf kecil, angka, titik, underscore (3-20 karakter).</div>
+    </div>
+    <div class="field">
+      <label>Nama Lengkap</label>
+      <div class="iw"><i class="fa-solid fa-id-card l"></i>
+        <input id="nama" placeholder="contoh: Budi Santoso">
+      </div>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <div class="iw"><i class="fa-solid fa-key l"></i>
+        <input id="password" type="password" required minlength="6" placeholder="Min 6 karakter">
+        <i class="fa-solid fa-eye toggle-pass" onclick="togglePass('password', this)"></i>
+      </div>
+    </div>
+    <div class="field">
+      <label>Konfirmasi Password</label>
+      <div class="iw"><i class="fa-solid fa-key l"></i>
+        <input id="password2" type="password" required>
+        <i class="fa-solid fa-eye toggle-pass" onclick="togglePass('password2', this)"></i>
+      </div>
+    </div>
+    <button class="btn" id="btn" type="submit"><i class="fa-solid fa-user-plus"></i> Daftar</button>
+    <div class="msg" id="msg"></div>
+  </form>
+  <div class="bottom">Sudah punya akun? <a href="login.html">Login</a></div>
+</div>
+
+<script>
+var f = document.getElementById("f");
+var btn = document.getElementById("btn");
+var msg = document.getElementById("msg");
+
+f.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  var u = document.getElementById("username").value.trim().toLowerCase();
+  var nama = document.getElementById("nama").value.trim();
+  var p = document.getElementById("password").value;
+  var p2 = document.getElementById("password2").value;
+
+  if (!/^[a-z0-9_.]{3,20}$/.test(u)) return setMsg("Username tidak valid.", "err");
+  if (p.length < 6) return setMsg("Password minimal 6 karakter.", "err");
+  if (p !== p2) return setMsg("Konfirmasi password tidak cocok.", "err");
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Memproses...';
+  setMsg("Mendaftarkan...", "info");
+
+  try {
+    var res = await fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: u, password: p, nama: nama })
+    });
+    var data = await res.json();
+
+    if (!res.ok) throw new Error(data.error || "Gagal daftar");
+
+    setMsg("✅ Berhasil daftar! Mengalihkan...", "ok");
+    setTimeout(function () { window.location.replace("login.html"); }, 1000);
+  } catch (err) {
+    setMsg("❌ " + err.message, "err");
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fa-solid fa-user-plus"></i> Daftar';
+  }
+});
+
+function setMsg(t, type) {
+  msg.textContent = t;
+  msg.className = "msg";
+  if (type === "ok") msg.classList.add("ok");
+  if (type === "info") msg.classList.add("info");
+}
+function togglePass(id, el) {
+  var input = document.getElementById(id);
+  if (input.type === "password") { input.type = "text"; el.classList.remove("fa-eye"); el.classList.add("fa-eye-slash"); }
+  else { input.type = "password"; el.classList.remove("fa-eye-slash"); el.classList.add("fa-eye"); }
+}
+</script>
+</body>
+</html>
