@@ -1,0 +1,13 @@
+<%- include("partials/header", {title: "Daftar — JayPay", user: null}) %>
+<main class="auth-page"><div class="auth-card">
+  <div class="auth-logo">N</div><h1>Buat akun baru</h1><p>Mulai menggunakan dashboard JayPay.</p>
+  <% if (error) { %><div class="error"><%= error %></div><% } %>
+  <form method="post" action="/register">
+    <label>Nama<input type="text" name="name" placeholder="Nama kamu" required></label>
+    <label>Email<input type="email" name="email" placeholder="nama@email.com" required></label>
+    <label>Password<input type="password" name="password" placeholder="Minimal 6 karakter" minlength="6" required></label>
+    <button class="btn full" type="submit">Buat Akun →</button>
+  </form>
+  <p class="switch">Sudah punya akun? <a href="/login">Masuk</a></p>
+</div></main>
+<%- include("partials/footer") %>
