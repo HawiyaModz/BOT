@@ -1,0 +1,21 @@
+<%- include("partials/header", {title: "Dashboard — JayPay", user}) %>
+<main class="dashboard">
+  <div class="dash-head"><div><span class="eyebrow">DASHBOARD</span><h1>Halo, <%= user.name %> 👋</h1><p>Berikut ringkasan platform kamu.</p></div><form method="post" action="/logout"><button class="btn ghost" type="submit">Keluar</button></form></div>
+  <div class="stats">
+    <div><small>Total Aktivitas</small><strong>24,892</strong><span class="up">+18.4%</span></div>
+    <div><small>Pengguna</small><strong id="users">0</strong><span>Terdaftar</span></div>
+    <div><small>Fitur Aktif</small><strong id="features">48</strong><span>Tersedia</span></div>
+    <div><small>Server</small><strong class="online">Online</strong><span>99.9% uptime</span></div>
+  </div>
+  <div class="dash-grid">
+    <section class="panel"><div class="panel-title"><h2>Aktivitas</h2><span>7 hari</span></div><div class="chart"><i style="height:32%"></i><i style="height:48%"></i><i style="height:40%"></i><i style="height:66%"></i><i style="height:54%"></i><i style="height:82%"></i><i style="height:71%"></i></div><div class="days"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span></div></section>
+    <section class="panel"><div class="panel-title"><h2>Status Layanan</h2><span class="online">● Live</span></div><div class="service"><b>Web Server</b><span class="online">Operational</span></div><div class="service"><b>REST API</b><span class="online">Operational</span></div><div class="service"><b>Authentication</b><span class="online">Operational</span></div><div class="service"><b>Database</b><span>Not connected</span></div></section>
+  </div>
+</main>
+<script>
+fetch("/api/status").then(r=>r.json()).then(d=>{
+ document.getElementById("users").textContent=d.users;
+ document.getElementById("features").textContent=d.features;
+});
+</script>
+<%- include("partials/footer") %>

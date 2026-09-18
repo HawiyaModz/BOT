@@ -1,0 +1,11 @@
+<%- include("partials/header", {title: "FAQ — JayPay", user: null}) %>
+<main class="page narrow">
+  <div class="page-title"><span class="eyebrow">FAQ</span><h1>Pertanyaan umum</h1></div>
+  <div class="faq">
+    <details open><summary>Apakah ini benar-benar menggunakan Node.js?</summary><p>Ya. Server menggunakan Node.js dan Express, sedangkan halaman dirender menggunakan EJS.</p></details>
+    <details><summary>Apakah bisa memakai MySQL/MongoDB?</summary><p>Bisa. Struktur backend sengaja dibuat sederhana agar database dapat ditambahkan kemudian.</p></details>
+    <details><summary>Apakah responsive?</summary><p>Ya. CSS menggunakan breakpoint untuk HP, tablet, dan desktop.</p></details>
+    <details><summary>Apakah bisa ditambahkan API?</summary><p>Bisa. Endpoint REST dapat ditambah di app.js atau dipisahkan ke folder routes/controllers.</p></details>
+  </div>
+</main>
+<%- include("partials/footer") %>
