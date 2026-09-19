@@ -1,0 +1,79 @@
+Rimuru MD — Fitur Zero Two yang benar-benar ditambahkan
+
+Jumlah plugin/fungsi baru: 60
+
+Metode:
+- Membandingkan fungsi/kode plugin, bukan hanya nama file atau command.
+- Fitur dengan fungsi setara di Rimuru tidak disalin.
+- Alias/command yang bentrok tidak digunakan.
+- Dependency lokal dan asset yang dibutuhkan ikut dibawa bila belum tersedia.
+- API untuk fitur impor disimpan di rimuru.js melalui RIMURU_ZERO_API; config.js hanya mereferensikan object tersebut.
+
+FITUR DITAMBAHKAN
+- plugins/ai/aisantai.js — aisantai, ceai, chateverywhere, ce, chatgpt
+- plugins/ai/glm4.js — glm4, glm, glm46v
+- plugins/ai/luffy_ai.js — luffyai, luffy, monkeydluffy, mugiwara
+- plugins/ai/nanobanana.js — nanobanana, nano, imgedit
+- plugins/ai/nanoedit.js — nanoedit, editimage, aiimage, hapusobjek, removeobject
+- plugins/ai/quillbotai.js — quillbotai, qai, aiimg, quillimg
+- plugins/anime/fotorandom002.js — fotorandom002, fotorimuru, randomfotozero
+- plugins/canvas/fakeatm.js — fakeatm, atmfake, kartuatm, fakecardatm
+- plugins/canvas/fakeff2.js — fakeff2, fakefreefire2
+- plugins/canvas/fakeidcard.js — fakeidcard, idcardfake, faketanda, faketanda pengenal
+- plugins/canvas/fakeijazah.js — fakeijazah, ijazahfake, fakediploma
+- plugins/canvas/fakeijin.js — fakeijin, ijinfake, suratijin, fakeizin
+- plugins/canvas/fakekarcis.js — fakekarcis, karcisfake, tiketbioskop, faketiketfilm
+- plugins/canvas/fakekatubelajat.js — fakekartupelajar, kartupelajarfake, fakestudentid, fakekps
+- plugins/canvas/fakenikah.js — fakenikah, nikahfake, fakemarriage
+- plugins/canvas/fakepaspor.js — fakepaspor, pasporfake, fakepassport
+- plugins/canvas/fakesertifikat.js — fakesertifikat, sertifikatfake, fakecert
+- plugins/canvas/fakesp.js — fakesp, spfake, suratpanggilan, fakesuratpanggil
+- plugins/canvas/faketiket.js — faketiket, tiketfake, faketicket, fakepesawat
+- plugins/canvas/meme2.js — meme2, changemymind
+- plugins/canvas/meme3.js — meme3, 3panel
+- plugins/canvas/oh-no.js — oh-no, ohno, ohnomeme
+- plugins/canvas/pacarsertifikat.js — pacarsertifikat, sertifikatpacar, certpacar, pacarcert
+- plugins/canvas/ustadz.js — ustadz, ustad, quoteustadz, canvasustadz
+- plugins/economy/topcurrency.js — topcurrency, topmatauang, rankcurrency
+- plugins/fun/cekkontol.js — cekkontol, kontolcheck
+- plugins/fun/cekotot.js — cekotot, ototcheck, cekmuscle
+- plugins/fun/gachabini.js — gachabini
+- plugins/fun/gachatomboy.js — gachatomboy
+- plugins/fun/gachfemboy.js — gachafemboy
+- plugins/fun/respon.js — autorimuru
+- plugins/game/checkerszerotwo.js — checkers, dam, caturdam, zerocheckers
+- plugins/game/sambungkata.js — sambungkata, skata, sambungkat, wordchain
+- plugins/group/autoai.js — autoai, aai
+- plugins/jpm/jpmalbum.js — jpmalbum, jpmab, jaseralbum
+- plugins/jpm/jpmbasic.js — jpmbasic, jpmb, jaser2
+- plugins/owner/autogreet2.js — autosiang, autosore, greetsiang, greetsore
+- plugins/owner/autogreetvid.js — autovidpagi, autovidmalam, greetvid
+- plugins/owner/autopromo.js — iklan
+- plugins/owner/dellalluser.js — deluserall, deletealluser, hapussemua, delalluser, resetuser, clearuser
+- plugins/owner/setlimitpremium.js — setlimitpremium, setlimitprem, premlimit
+- plugins/owner/updatescript.js — updatescript, updatebot, updatesc
+- plugins/pushkontak/pushkontak2.js — pushkontak2, puskontak2, push2
+- plugins/religi/bacaansholat.js — bacaansholat, bacaan, bacaan salat
+- plugins/search/anime2.js — anime2, animeku2, nime2, ani2
+- plugins/search/animesanka.js — animesanka, sanka, animeid, animeindo
+- plugins/search/apkcombo.js — apkcombo, apk, apksearch
+- plugins/search/apkpure.js — apkpure, apkp
+- plugins/search/apkzoic.js — apkzoic, apkz
+- plugins/search/getmusik.js — getmusik, dlmusik, downloadmusik
+- plugins/search/putar-play2.js — putar-play2, putar-play2
+- plugins/store/buy.js — beliproduk, buyproduk, belisaldo, buywithkoin, ordersaldo
+- plugins/store/cancelorder.js — cancelorder, batalorder, batalkanorder
+- plugins/store/confirmorder.js — confirmorder, konfirmorder, selesaiorder, doneorder
+- plugins/store/myorder.js — myorder, orderku, cekorder, pesananku
+- plugins/store/simulatepay.js — simulatepay, simpay, testpay, fakepay
+- plugins/tools/hdvideo2.js — hdvideo2, enhancevideo2, videohd2, videoenhance2, video2k2
+- plugins/tools/preset.js — preset, prst
+- plugins/tools/shupload.js — shzupload, shz, uploadshz
+- plugins/tools/tebalteks.js — tebalteks, boldtext
+
+FITUR YANG TIDAK DISALIN
+- Fitur yang fungsi utamanya sudah tersedia di Rimuru.
+- Fitur yang menyebabkan command/alias bentrok.
+- Fitur skin/menu yang hanya mengganti identitas Zero Two.
+- Fitur NSFW/nudify.
+- Downloader yang hanya merupakan variasi dari downloader Youtube/Spotify/Instagram/AIO yang sudah ada di Rimuru.

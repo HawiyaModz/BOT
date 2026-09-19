@@ -1,0 +1,70 @@
+╔═══════════════╗
+║            Rimuru MD          ║
+╚═══════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 INFORMASI SCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🤖 Bot Name   : Rimuru MD
+⚡ Version    : 4.0
+👑 Developer  : 𝑨𝒏𝒊𝒕𝒂 𝑷𝒖𝒕𝒓𝒊 𝑨𝒛𝒛𝒂𝒉𝒓𝒂
+🛠️ Base Type  : Multi Device
+📦 Type Script: Private
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ig: @anitaputriazzahra
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📢 WARNING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️ Jangan hapus credits developer
+⚠️ Jangan perjualbelikan SC tanpa izin
+⚠️ Rename seperlunya aja 
+⚠️ Jika ada error fix sendiri dulu 
+⚠️ Dilarang claim hasil recode full
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠️ CARA RENAME BOT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Buka file config.js
+2. Cari bagian berikut:
+
+bot: {
+   name: 'Rimuru MD'
+}
+
+3. Ganti sesuai nama bot kalian ✨
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👑 DEVELOPER Rimuru MD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💻 Di buat Oleh :
+𝑨𝒏𝒊𝒕𝒂 𝑷𝒖𝒕𝒓𝒊 𝑨𝒛𝒛𝒂𝒉𝒓𝒂
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📱 WhatsApp Developer :
+
+https://wa.me/6282191035625
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📜 PEMILIK SC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👑𝑨𝒏𝒊𝒕𝒂 𝑷𝒖𝒕𝒓𝒊 𝑨𝒛𝒛𝒂𝒉𝒓𝒂
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Website
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+https://anita-studio.netlify.app/
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💖 THANKS TO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💖 Allah SWT
+💖 Orang Tua
+💖 Semua User
+💖 Semua Member Support
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Script ini dibuat untuk belajar
+• Jangan abuse fitur bot
+• Gunakan dengan bijak
+• Jangan spam bot owner 😭 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+© 𝑨𝒏𝒊𝒕𝒂 𝑷𝒖𝒕𝒓𝒊 𝑨𝒛𝒛𝒂𝒉𝒓𝒂 - 2026-2027

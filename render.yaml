@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: rimuru-web-jadibot
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: WEB_MAX_JADIBOTS
+        value: "5"
+      - key: WEB_RATE_LIMIT
+        value: "8"
+      - key: JADIBOT_AUTH_FOLDER
+        value: /var/data/session/jadibot
+    disk:
+      name: rimuru-data
+      mountPath: /var/data
+      sizeGB: 1
